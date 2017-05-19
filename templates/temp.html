@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head>
+        <title>Weather NOAA</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
+    </head>
+
+<body>
+
+    <h1>Current Weather</h1>
+
+    <p> The Latitude is : {{ latitude }}</p>
+    <p> The Longitude is : {{ longitude }}</p>
+
+
+
+    <form action="/refresh" method="POST">
+        <input id="refresh" style="font-size: 15px;" type="submit" value="Refresh">
+    </form>
+
+
+    <table id="weather">
+        <tr>
+            <th>
+                Maximum Temperature (Fahrenheit)
+            </th>
+            <th>
+                Minimum Temperature (Fahrenheit)
+            </th>
+            <th>
+                Wind Speed (Knots)
+            </th>
+            <th>
+                Cloud Cover Percentage (Percent)
+            </th>
+            <th>
+                Liquid Precipitation (Inches)
+            </th>
+            <th>
+                Snow Precipitation (Inches)
+            </th>
+        </tr>
+
+        <tr>
+            <td style="width: 250px; vertical-align:top">
+                <ul style="list-style-type: none">
+                    {% for data in maximum_temp %}
+                    <li>{{data}}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td style="width: 250px; vertical-align:top">
+                <ul style="list-style-type: none">
+                    {% for data in minimum_temp %}
+                    <li>{{data}}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td style="width: 250px; vertical-align:top">
+                <ul style="list-style-type: none">
+                    {% for data in wind_speed %}
+                    <li>{{data}}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td style="width: 250px; vertical-align:top">
+                <ul style="list-style-type: none">
+                    {% for data in cloud_cover %}
+                    <li>{{data}}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td style="width: 250px; vertical-align:top">
+                <ul style="list-style-type: none">
+                    {% for data in liq_precipitation %}
+                    <li>{{ data }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td style="width: 250px; vertical-align:top">
+                <ul style="list-style-type: none">
+                    {% for data in snow_precipitation %}
+                    <li>{{ data }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

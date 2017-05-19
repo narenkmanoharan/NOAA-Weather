@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Service</title>
+</head>
+<body>
+
+    <h1>NOAA WEATHER SERVICE</h1>
+
+    <h2>Enter the Latitude and Longitude</h2>
+
+		<form action="/service" method="POST">
+        <table>
+            <tr>
+                <td>
+                    Latitude
+                </td>
+                <td>
+                    <input type="text" name="latitude" title="lat" placeholder="45.0214">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Longitude
+                </td>
+                <td>
+                    <input type="text" name="longitude" title="long" placeholder="-71.9343">
+                </td>
+            </tr>
+        </table>
+
+            <br>
+
+			<input type="submit">
+
+		</form>
+
+    <br><br>
+
+
+</body>
+</html>
